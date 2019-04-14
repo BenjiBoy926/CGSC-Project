@@ -77,7 +77,7 @@ public class Player : MonoBehaviour
 
 ...and attach it to the player game object like this...
 
-![](README/PlayerComponentBad.png)
+![Example of a bad way to design the player gameobject and code](README/PlayerComponentBad.png)
 
 This design is *not advisable* for at least three reasons:
 
@@ -122,4 +122,4 @@ public class Mover : MonoBehaviour
 
 ...attached to the Player game object like this...
 
-![](README/PlayerComponentGood.png)
+![Example of an effective way to design player gameobjct and code](README/PlayerComponentGood.png)
