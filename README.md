@@ -12,26 +12,25 @@ There are currently two central mechanics in our game:
 
 This certainly leaves much to be desired in the way of fun and thrilling gameplay!  But once we have a working prototype with scalable code, we'll have a better idea about what thrilling new mechanics could be added to improve our project
 
-![Central mechanics include full top-down 2-D movement, grapple mechanic, floors and pitfalls](README/BasicMechanicsDiagram.png)
-
+<img src="README/BasicMechanicsDiagram.png" alt="Central mechanics diagram" width="500"/>
 
 ## Object Inventory
 Player objects:
 * Player 
-( <img src="README/BlueCircle.png" alt="drawing" width="10"/> )
+( <img src="README/BlueCircle.png" alt="blue circle" width="10"/> )
 * Grapple 
-( <img src="README/OrangeLine.png" alt="drawing" height="10"/> )
+( <img src="README/OrangeLine.png" alt="orange line" height="10"/> )
 
 Environmental objects:
 
 * Safe ground 
-( <img src="README/BrownSquare.png" alt="drawing" width="10"/> )
+( <img src="README/BrownSquare.png" alt="brown square" width="10"/> )
 * Pitfalls 
-( <img src="README/BlackSquare.png" alt="drawing" width="10"/> )
+( <img src="README/BlackSquare.png" alt="black square" width="10"/> )
 * Grapple points 
-( <img src="README/PinkTriangle.png" alt="drawing" width="10"/> )
+( <img src="README/PinkTriangle.png" alt="pink triangle" width="10"/> )
 * Goal 
-( <img src="README/GoldStar.png" alt="drawing" width="10"/> )
+( <img src="README/GoldStar.png" alt="gold star" width="10"/> )
 
 What we have above is essentially a key for understanding the fun little diagram in the [central mechanic](#central-mechanics) section of this document.
 
@@ -77,7 +76,7 @@ public class Player : MonoBehaviour
 
 ...and attach it to the player game object like this...
 
-![](README/PlayerComponentBad.PNG)
+![Player components bad example](README/PlayerComponentBad.PNG)
 
 This design is *not advisable* for at least three reasons:
 
@@ -122,4 +121,4 @@ public class Mover : MonoBehaviour
 
 ...attached to the Player game object like this...
 
-![](README/PlayerComponentGood.PNG)
+![Player components good example](README/PlayerComponentGood.PNG)
