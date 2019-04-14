@@ -77,7 +77,7 @@ public class Player : MonoBehaviour
 
 ...and attach it to the player game object like this...
 
-<img src="README/PlayerComponentBad.png" alt="drawing" height="200"/>
+![](README/PlayerComponentBad.PNG)
 
 This design is *not advisable* for at least three reasons:
 
@@ -122,4 +122,4 @@ public class Mover : MonoBehaviour
 
 ...attached to the Player game object like this...
 
-<img src="README/PlayerComponentGood.png" alt="drawing" height="200"/>
+![](README/PlayerComponentGood.PNG)
