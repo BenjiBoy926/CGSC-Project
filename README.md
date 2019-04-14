@@ -3,7 +3,6 @@ We're the Computer Game Science Club at Saddleback College, and right now
 we're working on a top-down 2-D puzzle platforming game together as a club
 
 ## Central Mechanics
-***
 There are currently two central mechanics in our game:
 
 * Full top-down 2-D movement 
@@ -17,7 +16,6 @@ This certainly leaves much to be desired in the way of fun and thrilling gamepla
 
 
 ## Object Inventory
-***
 Player objects:
 * Player 
 ( <img src="README/BlueCircle.png" alt="drawing" width="10"/> )
