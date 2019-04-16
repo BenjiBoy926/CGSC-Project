@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerGrappleSpawner : MonoBehaviour
+public class PlayerGrappleLauncher : MonoBehaviour
 {
-    // Start is called before the first frame update
+	[SerializeField] private GrappleHookController hook;
+
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
