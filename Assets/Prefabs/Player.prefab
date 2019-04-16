@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6674582002063184179}
   - component: {fileID: 6674582002063184178}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,8 +65,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -517385643
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300534, guid: c51d6277d6e5e86499e6eca007e73e8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 6674582003412511459}
   - component: {fileID: 6674582003412511460}
   - component: {fileID: 6674582003412511457}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,4 +164,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalAxisName: Horizontal
   verticalAxisName: Vertical
-  moveSpeed: 1
+  moveSpeed: 3.5
