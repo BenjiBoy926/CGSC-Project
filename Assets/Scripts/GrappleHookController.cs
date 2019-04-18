@@ -15,7 +15,7 @@ public class GrappleHookController : MonoBehaviour
 
 	void OnEnable()
     {
-		Launch(transform.right, launchForce);
+		//Launch(transform.right, launchForce);
     }
 
 	private void OnCollisionEnter2D(Collision2D collision) {
@@ -27,7 +27,16 @@ public class GrappleHookController : MonoBehaviour
     {
     }
 
-	public void Launch(Vector2 direction, float force) {
+	public void Launch(Vector2 position, Vector2 direction, float force) {
+		gameObject.SetActive(true);
+		hookRigidbody.simulated = true;
+
+		hookRigidbody.position = position;
+		hookRigidbody.rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
+
+		hookRigidbody.velocity = Vector2.zero;
+		hookRigidbody.angularVelocity = 0f;
+
 		hookRigidbody.AddForce(direction.normalized * force, ForceMode2D.Impulse);
 
 	}

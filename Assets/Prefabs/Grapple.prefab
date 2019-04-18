@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 1830411738411650387}
   - component: {fileID: 9011167537117094015}
   - component: {fileID: 1413186816869207784}
+  - component: {fileID: 1749260461}
   m_Layer: 9
   m_Name: Hook
   m_TagString: Untagged
@@ -104,14 +105,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830411738411650397}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.08715578, w: 0.9961947}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 30416792309873715}
   m_Father: {fileID: 3361978489201584062}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 10}
 --- !u!58 &9011167537117094015
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -149,6 +150,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1749260461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830411738411650397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7325e5c51905174db46708e63467458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  launchForce: 10
+--- !u!114 &4952989586332222533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6787038355115080243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af780f21f5f9c8f4aad864334616bede, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ropeLine: {fileID: 6891983657881945391}
+  start: {fileID: 0}
+  end: {fileID: 1830411738411650387}
+  ropeWidth: 0.1
+  ropeColor: {r: 0.6784314, g: 0.54509807, b: 0.25490198, a: 1}
 --- !u!1 &7880733833659038974
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,7 +189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3361978489201584062}
-  - component: {fileID: 251731883104711338}
+  - component: {fileID: 7800260839475212478}
   m_Layer: 9
   m_Name: Grapple
   m_TagString: Untagged
@@ -182,7 +213,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &251731883104711338
+--- !u!114 &7800260839475212478
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,14 +222,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7880733833659038974}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af780f21f5f9c8f4aad864334616bede, type: 3}
+  m_Script: {fileID: 11500000, guid: 87157cd548cd2f14e8c1f334bd0d034f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ropeLine: {fileID: 6891983657881945391}
-  start: {fileID: 0}
-  end: {fileID: 1830411738411650387}
-  ropeWidth: 0.1
-  ropeColor: {r: 0.6784314, g: 0.54509807, b: 0.25490198, a: 1}
+  hookController: {fileID: 1749260461}
+  ropeController: {fileID: 4952989586332222533}
 --- !u!1001 &6788027367097365883
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -293,6 +321,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67db316532143b248b19bb424019b871, type: 3}
+--- !u!1 &6787038355115080243 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000013289361224, guid: 67db316532143b248b19bb424019b871,
+    type: 3}
+  m_PrefabInstance: {fileID: 6788027367097365883}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6790829081493604253 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000010310415078, guid: 67db316532143b248b19bb424019b871,
@@ -305,7 +339,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 6788027367097365883}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6787038355115080243}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b34068df4b284f60add5d301695f152, type: 3}

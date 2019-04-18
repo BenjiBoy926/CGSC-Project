@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 6674582003412511459}
   - component: {fileID: 6674582003412511460}
   - component: {fileID: 6674582003412511457}
+  - component: {fileID: 992474752}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -165,3 +166,18 @@ MonoBehaviour:
   horizontalAxisName: Horizontal
   verticalAxisName: Vertical
   moveSpeed: 3.5
+--- !u!114 &992474752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6674582003412511461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e1afc0ea7cf0854096898a519dabe98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hook: {fileID: 0}
+  throwButton: Fire1
+  throwSpeed: 5
