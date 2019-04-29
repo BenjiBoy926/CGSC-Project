@@ -5,7 +5,7 @@ using UnityEngine.Assertions;
 
 public class PlayerGrappleLauncher : MonoBehaviour
 {
-	[SerializeField] private GrappleController hook;
+	[SerializeField] private Grapple.GrappleController hook;
 	[SerializeField] private string throwButton = "Fire1";
 	[SerializeField] private float throwSpeed = 5f;
 
