@@ -91,6 +91,8 @@ GameObject:
   - component: {fileID: 9011167537117094015}
   - component: {fileID: 1413186816869207784}
   - component: {fileID: 1749260461}
+  - component: {fileID: 1830411738632864284}
+  - component: {fileID: 2656210864790928596}
   m_Layer: 9
   m_Name: Hook
   m_TagString: Untagged
@@ -120,7 +122,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830411738411650397}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -142,13 +144,13 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 0.1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &1749260461
 MonoBehaviour:
@@ -162,7 +164,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7325e5c51905174db46708e63467458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchForce: 10
+  launchForce: 15
+--- !u!114 &1830411738632864284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830411738411650397}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e3e8f50d81eff41b65fdd4166af089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  retractTarget: {fileID: 0}
+  speed: 20
+  vanishTarget: {fileID: 7880733833659038974}
+  vanishDistance: 0.5
+--- !u!114 &2656210864790928596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830411738411650397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75fd9afe3c6cef545988902f1f6eb5cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4952989586332222533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +226,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3361978489201584062
 Transform:
   m_ObjectHideFlags: 0
@@ -225,8 +255,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87157cd548cd2f14e8c1f334bd0d034f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hookController: {fileID: 1749260461}
-  ropeController: {fileID: 4952989586332222533}
+  launcher: {fileID: 1749260461}
+  returner: {fileID: 1830411738632864284}
+  attacher: {fileID: 2656210864790928596}
+  rope: {fileID: 4952989586332222533}
 --- !u!1001 &6788027367097365883
 PrefabInstance:
   m_ObjectHideFlags: 0

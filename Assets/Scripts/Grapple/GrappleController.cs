@@ -5,17 +5,38 @@ using UnityEngine.Assertions;
 
 namespace Grapple {
 	public class GrappleController : MonoBehaviour {
-		[SerializeField] private HookLauncher hookController;
-		[SerializeField] private Rope ropeController;
+		// TODO These should all bei nterfaces but Unity is dumb
+		[SerializeField] private HookLauncher launcher;
+		[SerializeField] private HookReturner returner;
+		[SerializeField] private HookAttacher attacher;
+		[SerializeField] private Rope rope;
 
 		private void Awake() {
-			Assert.IsNotNull(hookController);
-			Assert.IsNotNull(ropeController);
+			Assert.IsNotNull(launcher);
+			Assert.IsNotNull(returner);
+			Assert.IsNotNull(attacher);
+			Assert.IsNotNull(rope);
+
+			launcher.CollideCallback += attacher.Attach;
 		}
 
 		public void Launch(Vector2 position, Vector2 direction) {
-			gameObject.SetActive(true);
-			hookController.Launch(position, direction);
+
+			if(!gameObject.activeSelf) {
+				Debug.Log("Launching");
+
+				gameObject.SetActive(true);
+				launcher.Launch(position, direction);
+			}
+		}
+
+		public void Return() {
+
+			if(attacher.Attached != null) {
+				Debug.Log("Returning");
+				attacher.Detach();
+				returner.Return();
+			}
 		}
 
 	}

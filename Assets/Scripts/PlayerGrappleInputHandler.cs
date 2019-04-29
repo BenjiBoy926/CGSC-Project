@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-public class PlayerGrappleLauncher : MonoBehaviour
+public class PlayerGrappleInputHandler : MonoBehaviour
 {
 	[SerializeField] private Grapple.GrappleController hook;
 	[SerializeField] private string throwButton = "Fire1";
+	[SerializeField] private string returnButton = "Fire1";
 
 	private void Awake() {
 		Assert.IsNotNull(hook);
@@ -22,6 +23,10 @@ public class PlayerGrappleLauncher : MonoBehaviour
 			);
 
 			hook.Launch(transform.position, mouseOffsetFromPlayer.normalized);
+		}
+
+		if(Input.GetButtonDown(returnButton)) {
+			hook.Return();
 		}
     }
 }
