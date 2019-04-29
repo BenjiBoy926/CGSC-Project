@@ -13,9 +13,9 @@ namespace Grapple {
 			Assert.IsNotNull(ropeController);
 		}
 
-		public void Launch(Vector2 position, Vector2 direction, float force) {
+		public void Launch(Vector2 position, Vector2 direction) {
 			gameObject.SetActive(true);
-			hookController.Launch(position, direction, force);
+			hookController.Launch(position, direction);
 		}
 
 	}

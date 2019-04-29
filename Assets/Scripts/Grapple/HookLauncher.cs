@@ -18,8 +18,9 @@ namespace Grapple {
 		}
 
 		private void OnDisable() {
-			hookRigidbody.simulated = false;
+			//hookRigidbody.simulated = false;
 			hookRigidbody.velocity = Vector2.zero;
+			hookRigidbody.angularVelocity = 0f;
 		}
 
 		private void OnCollisionEnter2D(Collision2D collision) {
@@ -29,7 +30,7 @@ namespace Grapple {
 		void FixedUpdate() {
 		}
 
-		public void Launch(Vector2 position, Vector2 direction, float force) {
+		public void Launch(Vector2 position, Vector2 direction) {
 			enabled = true;
 			gameObject.SetActive(true);
 			hookRigidbody.simulated = true;
@@ -40,7 +41,7 @@ namespace Grapple {
 			hookRigidbody.velocity = Vector2.zero;
 			hookRigidbody.angularVelocity = 0f;
 
-			hookRigidbody.AddForce(direction.normalized * force, ForceMode2D.Impulse);
+			hookRigidbody.AddForce(direction.normalized * launchForce, ForceMode2D.Impulse);
 		}
 
 	}

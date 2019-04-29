@@ -7,7 +7,6 @@ public class PlayerGrappleLauncher : MonoBehaviour
 {
 	[SerializeField] private Grapple.GrappleController hook;
 	[SerializeField] private string throwButton = "Fire1";
-	[SerializeField] private float throwSpeed = 5f;
 
 	private void Awake() {
 		Assert.IsNotNull(hook);
@@ -22,7 +21,7 @@ public class PlayerGrappleLauncher : MonoBehaviour
 				mouseWorldPos.y - transform.position.y
 			);
 
-			hook.Launch(transform.position, mouseOffsetFromPlayer.normalized, throwSpeed);
+			hook.Launch(transform.position, mouseOffsetFromPlayer.normalized);
 		}
     }
 }
