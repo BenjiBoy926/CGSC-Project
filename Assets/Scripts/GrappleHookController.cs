@@ -22,13 +22,21 @@ public class GrappleHookController : MonoBehaviour
 	}
 
 	void OnEnable()
-  {
+  	{
 		//Launch(transform.right, launchForce);
-  }
+  	}
 
+	//if the grapple is launching, stop it's movement on a collision.
+	//if the grapple is retracting, turn it off on a collision and reset it.
 	private void OnCollisionEnter2D(Collision2D collision) 
 	{
-		if(grappleIsRetracting == true)
+		if(grappleIsRetracting == false && collision.gameObject.name != "Player")
+		{
+			hookRigidbody.velocity = Vector2.zero;
+			hookRigidbody.angularVelocity = 0f;
+		}
+
+		else if(grappleIsRetracting == true)
 		{
 			Debug.Log("GrappleHookController Collision");
 
@@ -42,12 +50,13 @@ public class GrappleHookController : MonoBehaviour
 	}
 
 	void FixedUpdate()
-  {
-  }
+ 	{
+	}
 
+	//Launch moves the hook from its home towards a given direction.
+	//In the case of the player, home is the player and the direction is towards the mouse.
 	public void Launch(Vector2 homePosition, Vector2 direction, float force) 
 	{
-		grappleIsActive = true;
 		gameObject.SetActive(true);
 		hookRigidbody.simulated = true;
 
@@ -60,9 +69,10 @@ public class GrappleHookController : MonoBehaviour
 		hookRigidbody.AddForce(direction.normalized * force, ForceMode2D.Impulse);
 	}
 
+	//Retract moves the hook from its current location to home.
+	//In the case of the player, home is the player and the direction is towards the player.
 	public void Retract(Vector2 homePosition, float force)
 	{
-		grappleIsRetracting = true;
 		hookRigidbody.simulated = true;
 
 		Vector2 direction = (homePosition - hookRigidbody.position).normalized;
