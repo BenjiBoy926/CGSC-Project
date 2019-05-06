@@ -9,21 +9,21 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private string verticalAxisName = "Vertical";
 	//[SerializeField] private float moveForce = 1f;
 	[SerializeField] private float moveSpeed = 1f;
-
 	private Rigidbody2D rb;
 
-	private void Awake() {
+	private void Awake() 
+	{
 		rb = GetComponent<Rigidbody2D>();
 	}
 
 
-    void FixedUpdate()
-    {
+  void FixedUpdate()
+  {
 		float desiredHorizontal = Input.GetAxis(horizontalAxisName);
 		float desiredVertical = Input.GetAxis(verticalAxisName);
 
 		//rb.AddForce(new Vector2(desiredHorizontal, desiredVertical) * moveForce);
 		rb.MovePosition(rb.position + new Vector2(desiredHorizontal, desiredVertical) * moveSpeed * Time.fixedDeltaTime);
 
-    }
+  }
 }

@@ -5,17 +5,26 @@ using UnityEngine.Assertions;
 
 public class GrappleController : MonoBehaviour
 {
-	[SerializeField] private GrappleHookController hookController;
-	[SerializeField] private GrappleRopeController ropeController;
+	private GrappleHookController hookController;
+	private GrappleRopeController ropeController;
+	
+	private void Awake() 
+	{
+		hookController = gameObject.GetComponentInChildren<GrappleHookController>();
+		ropeController = gameObject.GetComponentInChildren<GrappleRopeController>();
 
-	private void Awake() {
 		Assert.IsNotNull(hookController);
 		Assert.IsNotNull(ropeController);
 	}
 
-	public void Launch(Vector2 position, Vector2 direction, float force) {
+	public void Launch(Vector2 homePosition, Vector2 direction, float force) 
+	{
 		gameObject.SetActive(true);
-		hookController.Launch(position, direction, force);
+		hookController.Launch(homePosition, direction, force);
 	}
 
+	public void Retract(Vector2 homePosition, float force)
+	{
+		hookController.Retract(homePosition, force);
+	}
 }
